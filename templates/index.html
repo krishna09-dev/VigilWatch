@@ -60,7 +60,9 @@
   <div class="container" style="text-align:center;">
     <div class="header-bar">
       <h1>VigilWatch File Scanner</h1>
+      <a href="{{ url_for('admin_dashboard') }}">
       <button id="adminDashboard" class="upload-btn" style="display: none;">Admin Dashboard</button>
+      </a>
     </div>
     <h2>Scan Your Files for Threats</h2>
     <p>Upload a file to check for potential threats.</p>
@@ -101,9 +103,6 @@
     if (isAdmin) {
       document.getElementById('adminDashboard').style.display = 'inline-block';
     }
-    adminButton.addEventListener('click', () => {
-      window.location.href = '/admin.html'; // Redirect to admin.html (or your admin route)
-    });
   </script>
   
   <script src="{{ url_for('static', filename='js/alerts.js') }}"></script>
