@@ -173,7 +173,7 @@ def upload_file():
         send_alert(f"Virus detected in uploaded file {file.filename} by user {user}", severity="Critical")
         return jsonify({"status": "alert", "message": f"Virus detected in file {file.filename}."})
     else:
-        return jsonify({"status": "success", "message": f"File {file.filename} uploaded and scanned successfully."})
+        return jsonify({"status": "success", "message": f"File {file.filename} uploaded and scanned successfully. No Threads Detected"})
 
 @app.route('/alerts', methods=['GET'])
 def get_alerts():
