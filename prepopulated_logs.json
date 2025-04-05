@@ -254,6 +254,41 @@
       "message": "Permission escalation",
       "timestamp": "2025-04-05T15:35:16.783718",
       "severity": "Critical"
+    },
+    {
+      "message": "Permission escalation",
+      "timestamp": "2025-04-05T15:54:48.391206",
+      "severity": "Critical"
+    },
+    {
+      "message": "Unknown-location login",
+      "timestamp": "2025-04-05T15:55:00.977993",
+      "severity": "Medium"
+    },
+    {
+      "message": "Brute-force attack",
+      "timestamp": "2025-04-05T15:55:17.716093",
+      "severity": "Critical"
+    },
+    {
+      "message": "High download rate",
+      "timestamp": "2025-04-05T15:55:40.243778",
+      "severity": "Critical"
+    },
+    {
+      "message": "Large transaction",
+      "timestamp": "2025-04-05T15:55:52.962802",
+      "severity": "Critical"
+    },
+    {
+      "message": "Network anomaly",
+      "timestamp": "2025-04-05T15:56:05.709584",
+      "severity": "Medium"
+    },
+    {
+      "message": "Auth failures",
+      "timestamp": "2025-04-05T15:56:17.664981",
+      "severity": "Critical"
     }
   ]
 }
