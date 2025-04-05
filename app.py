@@ -312,6 +312,8 @@ def process_system_activity(event):
     else:
         send_alert(f"System activity event: {message}", severity="Low")
 
+
+
 def real_virus_scan(file_content):
     headers = {"x-apikey": VT_API_KEY}
     upload_url = "https://www.virustotal.com/api/v3/files"
