@@ -23,14 +23,29 @@
       text-align: center;
       margin-top: 20px;
     }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+    .header-bar h1 {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>VigilWatch Admin Dashboard</h2>
+    <div class="header-bar">
+      <h1>VigilWatch Admin Dashboard</h1>
+      <a href="{{ url_for('index') }}">
+        <button id="homepage" class="upload-btn">Home</button>
+      </a>
+    </div>
+    <h2></h2>
     <nav>
-      <a href="{{ url_for('index') }}">Home</a>
-      <a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a>
+      
     </nav>
 
     <!-- Filter Panel -->
