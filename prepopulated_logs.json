@@ -204,6 +204,56 @@
       "message": "IP 127.0.0.1 exceeded rate limit (Token Bucket).",
       "timestamp": "2025-04-05T10:18:24.570907",
       "severity": "Medium"
+    },
+    {
+      "message": "Brute-force attack",
+      "timestamp": "2025-04-05T14:24:42.449950",
+      "severity": "Critical"
+    },
+    {
+      "message": "Unknown-location login",
+      "timestamp": "2025-04-05T14:31:47.596497",
+      "severity": "Medium"
+    },
+    {
+      "message": "Permission escalation",
+      "timestamp": "2025-04-05T14:36:08.828185",
+      "severity": "Critical"
+    },
+    {
+      "message": "Permission escalation",
+      "timestamp": "2025-04-05T14:38:32.959462",
+      "severity": "Critical"
+    },
+    {
+      "message": "Permission escalation",
+      "timestamp": "2025-04-05T14:42:36.969780",
+      "severity": "Critical"
+    },
+    {
+      "message": "Virus in file.txt",
+      "timestamp": "2025-04-05T15:01:28.828257",
+      "severity": "Critical"
+    },
+    {
+      "message": "Brute-force attack",
+      "timestamp": "2025-04-05T15:05:01.881059",
+      "severity": "Critical"
+    },
+    {
+      "message": "Permission escalation",
+      "timestamp": "2025-04-05T15:29:32.736247",
+      "severity": "Critical"
+    },
+    {
+      "message": "Permission escalation",
+      "timestamp": "2025-04-05T15:31:17.853233",
+      "severity": "Critical"
+    },
+    {
+      "message": "Permission escalation",
+      "timestamp": "2025-04-05T15:35:16.783718",
+      "severity": "Critical"
     }
   ]
 }
