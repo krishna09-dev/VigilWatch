@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VigilWatch Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .charts-wrapper {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 30px auto;
+      max-width: 1440px;
+    }
+    .chart-container {
+      width: 400px;
+      height: auto;
+      margin: 20px;
+    }
+    #pagination {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>VigilWatch Admin Dashboard</h2>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a>
+    </nav>
+
+    <!-- Filter Panel -->
+    <div class="filter-panel">
+      <label for="severityFilter">Severity:</label>
+      <select id="severityFilter">
+        <option value="">All</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="Critical">Critical</option>
+      </select>
+      <label for="startDate">From:</label>
+      <input type="date" id="startDate">
+      <label for="endDate">To:</label>
+      <input type="date" id="endDate">
+      <button id="applyFilter" type="button">Apply Filter</button>
+      <button id="toggleSort" type="button">Sort: Latest First</button>
+    </div>
+
+    <!-- Alerts Table -->
+    <table id="alertsTable">
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Severity</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for alert in alerts %}
+        <tr class="alert-row" data-alert="{{ alert|tojson }}">
+          <td>{{ alert.timestamp }}</td>
+          <td>{{ alert.severity }}</td>
+          <td>{{ alert.message }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <!-- Pagination Controls -->
+    <div id="pagination"></div>
+
+    <!-- Charts Section -->
+    <div class="charts-wrapper">
+      <div class="chart-container">
+        <canvas id="severityChart" width="400" height="300"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="timeChart" width="400" height="300"></canvas>
+      </div>
+    </div>
+
+    <!-- Configuration Panel -->
+    <h3>Configuration Panel</h3>
+    <form id="configForm">
+      <label>Rate Limit (requests/min):</label>
+      <input type="number" id="rate_limit_requests" value="{{ config.rate_limit_requests }}"><br><br>
+      <label>Failed Login Threshold:</label>
+      <input type="number" id="failed_login_threshold" value="{{ config.failed_login_threshold }}"><br><br>
+      <label>Download Threshold:</label>
+      <input type="number" id="download_threshold" value="{{ config.download_threshold }}"><br><br>
+      <button type="submit">Update Config</button>
+    </form>
+  </div>
+  
+  <!-- Modal for Detailed Alert and Config Updates -->
+  <div id="alertModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3>Details</h3>
+      <pre id="alertDetails"></pre>
+    </div>
+  </div>
+  
+  <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>

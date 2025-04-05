@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VigilWatch - File Scanner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    /* Additional styles for the scan modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      width: 50%;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="text-align:center;">
+    <h1>VigilWatch File Scanner</h1>
+    <p>Drag and drop a file to scan for threats.</p>
+    <div id="dragDropArea" class="drag-drop-area">
+      Drop your file here or click to select.
+      <input type="file" id="fileInput" class="file-input">
+    </div>
+    <button id="uploadBtn" class="upload-btn" style="display: none;">Scan File</button>
+    <div id="scanStatus"></div>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div style="margin-top: 20px; text-align:center;">
+          {% for category, message in messages %}
+            <p style="color: red;">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+  </div>
+  
+  <!-- Modal for Scan Result -->
+  <div id="scanModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeScanModal">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalMessage"></p>
+      <button id="modalOk" class="upload-btn">OK</button>
+    </div>
+  </div>
+  
+  <script src="{{ url_for('static', filename='js/alerts.js') }}"></script>
+</body>
+</html>

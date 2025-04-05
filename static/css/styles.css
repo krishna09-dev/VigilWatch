@@ -1,0 +1,136 @@
+/* Global Styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+}
+
+.container {
+  padding: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Home Page Styles (File Scanning) */
+.drag-drop-area {
+  border: 3px dashed #4a90e2;
+  border-radius: 10px;
+  background-color: #e9f2fb;
+  padding: 60px;
+  font-size: 1.2rem;
+  color: #555;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+.drag-drop-area.hover {
+  background-color: #d0e6f8;
+  border-color: #357ab8;
+}
+.file-input {
+  display: none;
+}
+.upload-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.upload-btn:hover {
+  background-color: #357ab8;
+}
+
+/* Admin Page Styles */
+nav {
+  text-align: center;
+  margin-bottom: 30px;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: bold;
+}
+.filter-panel {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.filter-panel select,
+.filter-panel input {
+  padding: 8px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.filter-panel button {
+  padding: 8px 16px;
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+table, th, td {
+  border: 1px solid #ddd;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.6);
+}
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 60%;
+  border-radius: 8px;
+  position: relative;
+}
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+}
+
+/* Chart container */
+.chart-container {
+  margin: 30px auto;
+  width: 90%;
+}
