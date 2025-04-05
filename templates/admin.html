@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>VigilWatch Admin Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -16,8 +16,12 @@
       <h1>VigilWatch Admin Dashboard</h1>
       <div>
         <a href="{{ url_for('index') }}">
-          <button id="homepage" class="upload-btn">Home</button>
-        </a><button type="button" class="upload-btn" id="openConfigModalBtn">Update Config</button>
+          <button type="button" class="upload-btn">
+            <i class="fas fa-home"></i> 
+          </button>
+        </a><button type="button" class="upload-btn" id="openConfigModalBtn">
+          <i class="fas fa-wrench"></i> 
+        </button>
       </div>
     </div>
   </nav>

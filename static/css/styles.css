@@ -23,6 +23,8 @@ body {
   color: #555;
   transition: background-color 0.3s, border-color 0.3s;
   cursor: pointer;
+  height: 50vh;
+  align-content: center;
 }
 .drag-drop-area.hover {
   background-color: #d0e6f8;
