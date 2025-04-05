@@ -43,12 +43,28 @@
     .close:focus {
       color: #000;
     }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+    .header-bar h1 {
+      margin: 0;
+    }
+    
   </style>
 </head>
 <body>
   <div class="container" style="text-align:center;">
-    <h1>VigilWatch File Scanner</h1>
-    <button id="adminDashboard" style="display: none;">Admin Dashboard</button>
+    <div class="header-bar">
+      <h1>VigilWatch File Scanner</h1>
+      <button id="adminDashboard" class="upload-btn" style="display: none;">Admin Dashboard</button>
+    </div>
+    <h2>Scan Your Files for Threats</h2>
+    <p>Upload a file to check for potential threats.</p>
+    <p>Note: This is a demo version. For real-time scanning, please use the full version.</p>
     <p>Drag and drop a file to scan for threats.</p>
     <div id="dragDropArea" class="drag-drop-area">
       Drop your file here or click to select.
@@ -77,6 +93,18 @@
       <button id="modalOk" class="upload-btn">OK</button>
     </div>
   </div>
+  
+  <script>
+    // Simulate an admin check (replace with actual logic)
+    const isAdmin = true; // set based on user role, sessionStorage, etc.
+  
+    if (isAdmin) {
+      document.getElementById('adminDashboard').style.display = 'inline-block';
+    }
+    adminButton.addEventListener('click', () => {
+      window.location.href = '/admin.html'; // Redirect to admin.html (or your admin route)
+    });
+  </script>
   
   <script src="{{ url_for('static', filename='js/alerts.js') }}"></script>
 </body>
